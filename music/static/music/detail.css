@@ -1,0 +1,192 @@
+header h1 {
+    font-size: 3em;
+    padding: .2em 0;
+    text-align: center;
+}
+
+main {
+    padding: .2em 0;
+}
+
+main > section {
+    width: 90%;
+    margin: auto;
+}
+
+#about {
+    display: flex;
+}
+
+#about > div {
+    width: 50%;
+}
+
+.albumDetails {
+    position: relative;
+}
+
+.albumImg {
+    width: 400px;
+    margin: auto;
+}
+
+.albumImg img {
+    width: 100%;
+    min-height: 250px;
+    border-radius: 10px;
+}
+
+.artist {
+    font-size: 2em;
+    color: black;
+}
+
+.genre {
+    font-size: 1.3em;
+    color: black;
+}
+
+.artistImg {
+    margin: auto;
+    width: 250px
+}
+
+.artistImg > img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.songHeader {
+    font-size: 2.8em;
+    margin-bottom: .3em;
+}
+
+.noSongs {
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+}
+
+.bottomBtn {
+    display: flex;
+    justify-content: right;
+    gap: 2em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+
+.bottomBtn a {
+    color: #333333;
+    background: whitesmoke;
+    padding: 8px 20px;
+}
+
+.uploadSong {
+    margin: 4em;
+    display: flex;
+}
+
+.uploadSong a {
+    color: #333333;
+    background: whitesmoke;
+    padding: 8px 20px;
+    margin: auto;
+}
+
+.bottomBtn a:hover {
+    color: black;
+    font-weight: 500;
+    background: whitesmoke;
+    padding: 8px 20px;
+}
+
+form input::submit {
+    margin: 1em 0;
+}
+
+.song {
+    padding: 10px 18px;
+    margin-bottom: .3em;
+    width: 100%; 
+    color: white;
+    background: black;
+    transition: all .2s ease;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+.song:hover {
+    transform: scale(1.01);
+}
+
+.song p {
+    width: 100%;
+}
+
+.song {
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+}
+
+#fav {
+    width: 30px;
+}
+
+label {
+    display: flex;
+    gap: 5px;
+}
+
+footer {
+    margin: 1.5em;
+}
+
+@media screen and (max-width: 800px) {
+    #about {
+        display: block;
+    }
+    .albumDetails {
+        padding-bottom: 1.5em;
+    }
+    .albumImg {
+        width: 100%;
+    }
+    #about > div {
+        width: 100%;
+    }
+    .songHeader {
+        text-align: center;
+        font-size: 3.5em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .artist {
+        font-size: 1.3em;
+    }
+    .artistImg {
+        width: 60%;
+        margin: auto;
+    }
+    .bottomBtn {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 2em;
+        position: static;
+        margin-top: 2em;
+    }
+}
+
+
+@media screen and (max-width: 340px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+}

@@ -1,0 +1,49 @@
+{% extends 'music/base.html' %}
+
+
+{% block title %}
+    login
+{% endblock %}
+
+{% block css %}
+    .formWrapper {
+        display: grid;
+        place-content: center;
+        height: 50vh;
+        width: 100%;
+        padding: 1em;
+    }
+    form {
+        display: grid;
+        gap: 1em;
+        min-width: 70%;
+    }
+    @media screen and (min-width: 600px) {
+        .formWrapper {
+            height: 80vh;
+        }
+    }
+{% endblock %}
+
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'music/form-template.css' %}">
+{% endblock %}
+
+
+{% block body %}
+    <div class="formWrapper">
+        <div class="header">
+            <h1>Welcome Back, Login</h1>
+        </div>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include 'music/form-template.html' %}
+            <div id="submitBtn">
+                <button type="submit">submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

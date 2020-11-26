@@ -1,0 +1,75 @@
+#albums {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+#albumCard {
+    width: 300px;
+    margin: auto;
+}
+#albumCard h2 {
+    text-align: center;
+}
+.albumCover img {
+    width: 300px;
+    height: 300px;
+}
+#albumCard a::before {
+    content: "𝄞  ";
+    color: white;
+}
+footer {
+    margin: 2em 0;
+    text-align: center;
+}
+.myImg img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.myImg {
+    margin: auto;
+    width: 200px;
+}
+.noAlbums {
+    display: flex;
+    min-height: 40vh;
+    width: 100%;
+    padding: 0 1em;
+    display: grid;
+    place-content: center;
+}
+.noAlbums h1 {
+    margin-bottom: 1em;
+    text-align: center;
+}
+.noAlbums a {
+    color: black;
+    background: white;
+    font-weight: 1000;
+    padding: 6px 10px;
+    margin-left: 4px;
+}
+.create {
+    display: flex;
+    gap: 10px;
+}
+@media screen and (max-width: 440px) {
+    .create {
+        align-items: center;
+        flex-direction: columns;
+    }
+    #albums {
+        width: 100%;
+    }
+    .albumCover img {
+        width: 250px;
+        height: 250px;
+    }
+    #albumCard {
+        width: 250px;
+        margin: auto;
+    }
+}

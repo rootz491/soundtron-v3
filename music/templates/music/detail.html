@@ -1,0 +1,84 @@
+{% extends 'music/base.html' %}
+
+{% block title %}
+    {{ albumObj.album_title }}
+{% endblock %}
+
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'music/detail.css' %}">
+    {% if albumObj.song_set.count != 0 %}
+        <script defer src="{% static 'music/js/play.js' %}"></script>
+    {% endif %}
+{% endblock %}
+
+
+
+{% block body %}
+   <div id="container">
+
+        <header>
+            <h1>{{ albumObj.album_title }}</h1>
+            {% if User %}
+                <p>{{ User.username }}</p>
+            {% endif %}
+        </header>
+        <main>
+            <section id="about">
+                <div class="albumDetails">
+                    <div class="artist">
+                        <h2>{{ albumObj.artist }}</h2>
+                    </div>
+                    <div class="genre">
+                        <p>{{ albumObj.genre }}</p>
+                    </div>
+                    <div class="bottomBtn">
+                        <a href="{% url 'music:album-update' albumObj.id %}">update</a>
+                        <a href="{% url 'music:album-delete' albumObj.id %}">delete</a>
+                    </div>
+                </div>
+                <div class="albumCover">
+                    <div class="albumImg">
+                        <img src="{{ albumObj.album_logo.url }}" alt="Album Logo">
+                    </div>
+                </div>
+            </section>
+            <section id="songs">
+                <h1 class="songHeader">Songs</h1>
+                {% if albumObj.song_set.count != 0 %}
+                    <audio></audio>
+                    {% for song in albumObj.song_set.all %}
+
+                        <div data-key="{{ song.audio_file.url }}" class="song">
+                            <p>{{ song.song_title }}</p>
+
+
+                            <img class="play" src="https://img.icons8.com/fluent/24/000000/play.png"/>
+                            <img class="stop" src="https://img.icons8.com/fluent/24/000000/stop.png" hidden/>
+                        </div>
+
+                    {% endfor %}
+                {% else %}
+                    <div class="noSongs">
+                        <h1>songs haven't added yet!</h1>
+                        <p>please come back later</p>
+                    </div>
+                {% endif %}
+                <div class="uploadSong">
+                    <a href="{% url 'music:song-create' albumObj.id %}">upload song</a>
+                </div>
+            </section>
+        </main>
+
+        <audio id="player" hidden>
+            <source id="source">
+        </audio>
+
+        <footer>
+            <div class="artistImg">
+                <img src={{ albumObj.artist_logo.url }} alt="artist logo">
+            </div>
+        </footer>
+   </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'music/base.html' %}
+
+{% block title %}
+    Albums
+{% endblock %}
+
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'music/index.css' %}">
+{% endblock %}
+
+
+
+{% block body %}
+    <div class="wrapper">
+        <main>
+            {% if albums %}
+            <section id="albums">
+                    {% for album in albums %}
+                    <div id="albumCard">
+                        <div class="albumCover">
+                            <img src={{ album.album_logo.url }} alt="Album Logo">
+                        </div>
+                        <h2><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a></h2>
+                    </div>
+                    {% endfor %}
+            <section>
+            {% else %}
+                <div class="noAlbums">
+                    <h1>You haven't created any albums yet!</h1>
+                    <div class="create">
+                        <p>Let's create one now </p><a href="{% url 'music:album-create' %}">create album</a>
+                    </div>
+                </div>
+            {% endif %}
+        </main>
+        <footer>
+            <div class="myImg">
+                <img src="{% static 'music/img/rootz491.jpg' %}" alt="my img">
+            </div>
+            <a href="https://karansh491.netlify.app"><b>karansh491</b> @ DEV</a>
+        </footer>
+    </div>
+{% endblock %}

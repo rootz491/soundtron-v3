@@ -1,0 +1,43 @@
+{% extends 'music/base.html' %}
+
+
+{% block title %}
+    Add album
+{% endblock %}
+
+
+{% block css %}
+    .formWrapper {
+        display: grid;
+        place-content: center;
+        height: 100vh;
+        width: 100%;
+        padding: 1em;
+    }
+form {
+        display: grid;
+        gap: 1em;
+        min-width: 70%;
+    }
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'music/form-template.css' %}">
+{% endblock %}
+
+
+{% block body %}
+    <div class="formWrapper">
+        <h1>Add your Album</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include 'music/form-template.html' %}
+
+            <div id="submitBtn">
+                <button type="submit">submit</button>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}

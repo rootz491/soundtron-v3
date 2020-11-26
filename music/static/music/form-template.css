@@ -1,0 +1,47 @@
+
+
+
+/*   auto generated form-template styling   */
+
+#dataField {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    #dataField {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    input {
+        width: 100%;
+    }
+    form {
+        gap: 2.5em;
+    }
+}
+
+
+.input input {
+    padding: 5px;
+    font-size: 1.3em;
+}
+
+.input input:active {
+    outline: none;
+}
+
+#submitBtn {
+    display: flex;
+}
+
+#submitBtn button {
+    padding: 8px 20px;
+    margin: auto;
+    font-size: 1em;
+}
