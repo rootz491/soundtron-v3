@@ -26,7 +26,7 @@ AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
 
 class IndexView(LoginRequiredMixin, generic.ListView):
         model = Album
-        login_url = 'music:login'
+        #login_url = 'music:login'
         template_name = 'music/index.html'
         context_object_name = 'albums'
 
