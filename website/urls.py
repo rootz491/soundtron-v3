@@ -23,8 +23,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('music/', include('music.urls')),
-    path(r'', views.index, name='index'),
+    path('', include('music.urls')),
+    #path(r'', views.index, name='index'),
 ]
 
 
