@@ -134,8 +134,8 @@ def SongCreate(request, album_id):
 
                 # after all checks, saving the form.
                 new_song.save()
-                # return render(request, 'music/detail.html', {'albumObj': album})
-                return HttpResponseRedirect(reverse('music:detail', args=({'albumObj': album})))
+                return render(request, 'music/detail.html', {'albumObj': album})
+                
 
         context = {
                 'album': album,
