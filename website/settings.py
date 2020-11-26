@@ -28,7 +28,7 @@ SECRET_KEY = 'u!g@m$of4gpmge&_k4wurd@$jax01!lcn9nips+w9p_36nuo9p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['soundtron.herokuapp.com']
+ALLOWED_HOSTS = ['soundtron.herokuapp.com', "localhost", "127.0.0.1"]
 
 
 # Application definition
